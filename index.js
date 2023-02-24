@@ -14,14 +14,21 @@ app.listen(app.get("port"), () => {
   console.log(`Press Ctrl+C to stop server.`);
 });
 
+
+//init router
 const router = express.Router();
+
 
 router.get('/', (req, res)=> {
   res.sendFile('Welcome');
 });
 
-router.get('/products', (req, res)=> {
+router.get('/product', (req, res)=> {
   res.send('This is the products');
+});
+
+router.get('/product/:id', (req, res)=> {
+  res.send('This is the products id');
 });
 
 module.exports = router;
